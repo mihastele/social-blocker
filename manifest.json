@@ -4,13 +4,14 @@
   "version": "1.0",
   "description": "Blocks access to social media websites to help you stay focused",
   "permissions": [
-    "webRequest",
-    "webRequestBlocking",
     "storage",
-    "activeTab"
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess"
   ],
+  "host_permissions": ["<all_urls>"],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background.js",
+    "type": "module"
   },
   "action": {
     "default_popup": "popup.html",
@@ -24,5 +25,6 @@
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
-  }
+  },
+  "update_url": "https://clients2.google.com/service/update2/crx"
 }
