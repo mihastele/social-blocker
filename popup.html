@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Social Media Blocker</title>
+    <style>
+        body {
+            width: 300px;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+        }
+        .site-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .site-item {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            border-bottom: 1px solid #eee;
+        }
+        .site-item:last-child {
+            border-bottom: none;
+        }
+        .checkbox {
+            margin-right: 10px;
+        }
+        .site-name {
+            flex: 1;
+        }
+        .save-button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .save-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Social Media Blocker</h2>
+    <p>Select which social media sites to block:</p>
+    <ul id="site-list" class="site-list">
+        <!-- Sites will be populated by JavaScript -->
+    </ul>
+    <button id="save-button" class="save-button">Save Settings</button>
+    <script src="popup.js"></script>
+</body>
+</html>
