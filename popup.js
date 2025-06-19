@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Load saved settings
     chrome.storage.local.get(['blockedSites'], function(result) {
-        const sites = result.blockedSites || [
+        const defaultSites = [
             "facebook.com",
             "twitter.com",
             "instagram.com",
@@ -10,8 +10,23 @@ document.addEventListener('DOMContentLoaded', function() {
             "linkedin.com",
             "pinterest.com",
             "snapchat.com",
-            "youtube.com"
+            "youtube.com",
+            "youtu.be",
+            "whatsapp.com",
+            "messenger.com",
+            "tumblr.com",
+            "weibo.com",
+            "wechat.com",
+            "telegram.org",
+            "discord.com",
+            "twitch.tv",
+            "vimeo.com",
+            "9gag.com"
         ];
+        
+        // Merge default sites with saved blocked sites
+        const savedSites = result.blockedSites || [];
+        const sites = [...new Set([...defaultSites, ...savedSites])];
         
         // Create checkboxes for each site
         const siteList = document.getElementById('site-list');
@@ -22,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
             checkbox.className = 'checkbox';
-            checkbox.checked = true;
+            checkbox.checked = savedSites.length > 0 ? savedSites.includes(site) : true;
             checkbox.id = site;
             
             const label = document.createElement('label');

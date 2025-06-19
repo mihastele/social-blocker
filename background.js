@@ -6,7 +6,19 @@ const SOCIAL_MEDIA_SITES = [
   "reddit.com",
   "linkedin.com",
   "pinterest.com",
-  "snapchat.com"
+  "snapchat.com",
+  "youtube.com",
+  "youtu.be",
+  "whatsapp.com",
+  "messenger.com",
+  "tumblr.com",
+  "weibo.com",
+  "wechat.com",
+  "telegram.org",
+  "discord.com",
+  "twitch.tv",
+  "vimeo.com",
+  "9gag.com"
 ];
 
 // Load blocked sites from storage
