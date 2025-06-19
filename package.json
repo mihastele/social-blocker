@@ -1,0 +1,26 @@
+{
+  "name": "social-media-blocker",
+  "version": "1.0.0",
+  "description": "A browser extension to block social media websites and improve productivity",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "build:chrome": "node build.js chrome",
+    "build:firefox": "node build.js firefox",
+    "package": "npm run build && zip -r social-media-blocker-chrome.zip build/chrome/* && zip -r social-media-blocker-firefox.zip build/firefox/*"
+  },
+  "keywords": [
+    "productivity",
+    "blocker",
+    "social-media",
+    "browser-extension"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^10.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0"
+  }
+}

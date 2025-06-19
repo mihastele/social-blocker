@@ -1,20 +1,33 @@
 # Social Media Blocker
 
-A Chrome extension that helps you stay focused by blocking access to social media websites.
+A browser extension that helps you stay focused by blocking access to social media websites. Compatible with both Chrome and Firefox.
 
 ## Features
 
 - Block multiple social media websites
 - Customize which sites to block
 - Simple and intuitive interface
-- Uses Chrome's Manifest V3 for better performance
+- Cross-browser compatibility (Chrome and Firefox)
+- Persistent settings across browser sessions
 
 ## Installation
 
+### For Chrome:
 1. Clone this repository
-2. Open Chrome and go to `chrome://extensions/`
-3. Enable "Developer mode" in the top right corner
-4. Click "Load unpacked" and select the extension directory
+2. Run `npm install` to install dependencies
+3. Run `node build.js` to create the build files
+4. Open Chrome and go to `chrome://extensions/`
+5. Enable "Developer mode" in the top right corner
+6. Click "Load unpacked" and select the `build/chrome` directory
+
+### For Firefox:
+1. Clone this repository
+2. Run `npm install` to install dependencies
+3. Run `node build.js` to create the build files
+4. Open Firefox and go to `about:debugging#/runtime/this-firefox`
+5. Click "Load Temporary Add-on" and select `build/firefox/manifest.json`
+
+> **Note**: For a permanent installation in Firefox, you'll need to package the extension and sign it with Mozilla Add-ons.
 
 ## Usage
 
@@ -25,7 +38,10 @@ A Chrome extension that helps you stay focused by blocking access to social medi
 
 ## How it works
 
-The extension uses Chrome's webRequest API to intercept navigation requests to social media websites. When a blocked site is accessed, the request is automatically cancelled.
+The extension intercepts navigation requests to social media websites using the browser's webRequest API. When a blocked site is accessed, the request is automatically cancelled.
+
+- **Chrome**: Uses Manifest V3 with declarativeNetRequest for better performance
+- **Firefox**: Uses Manifest V2 with webRequest API for compatibility
 
 ## Supported Sites
 
